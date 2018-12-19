@@ -15,8 +15,8 @@ class IndexController extends Controller
     public function extractData(Request $request){
 		if($request->isMethod('post')){
 			$index = request('index');
-            
-            $dataArr = explode("\n", file_get_contents('C:\Users\user\python\result.txt'));  
+            //$dataArr = explode("\n", file_get_contents('C:\Users\user\python\result.txt'));
+            $dataArr = explode("\n", file_get_contents(storage_path('app/result.txt')));  
 		 }
 
 		  echo json_encode(array('dataArr'=>json_encode($dataArr[$index])));
