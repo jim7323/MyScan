@@ -81,19 +81,19 @@
                 })
                 .done(function(msg){   
                     $rtn=jQuery.parseJSON(msg);
-                    var data = jQuery.parseJSON($rtn['0']) + "," +jQuery.parseJSON($rtn['1'])+ "," +jQuery.parseJSON($rtn['2']);                
+                    var data = jQuery.parseJSON($rtn['0']) + "," +jQuery.parseJSON($rtn['1'])+ "," +jQuery.parseJSON($rtn['2']) + "," + jQuery.parseJSON($rtn['3']) + "," + jQuery.parseJSON($rtn['4']);                 
                     var spiltData = data.split(',');      
 
                     $.each(spiltData,function(k,v){
                     
-                        if (k == 767){                          
+                        if (k == 1279){                          
                             flag = true;
                         }
                         //setTimeout(drawLine(x,k,v)); 
                         context.fillStyle =  "rgb("+ v /256 +","+ v /256+","+ v /256+")";                          
-                        context.fillRect(x,k,10,1);
+                        context.fillRect(x,k,20,1);
                     });   
-                     x= x+3;                       
+                     x= x+5;                       
                      ExtractData(x);                   
                 });
                 if (x == 359){
@@ -107,7 +107,7 @@
             return function() {             
                 context.fillStyle =  "rgb("+ value /256 +","+ value /256+","+ value /256+")";
                 if (counter % 10 == 0){
-                    context.fillRect(y,x,10,1); // x,y,width,height                  
+                    context.fillRect(y,x,0,1); // x,y,width,height                  
                 }
             }
         } 
