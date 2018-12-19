@@ -91,7 +91,7 @@
                         }
                         //setTimeout(drawLine(x,k,v)); 
                         context.fillStyle =  "rgb("+ v /256 +","+ v /256+","+ v /256+")";                          
-                        context.fillRect(x,k,20,1);
+                        context.fillRect(x,k,20,20);
                     });   
                      x= x+5;                       
                      ExtractData(x);                   
